@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-//#include "includes/server_utils.hpp"
+#include "includes/server_utils.h"
 
 int main(int argc, char *argv[])
 {
@@ -21,9 +21,13 @@ int main(int argc, char *argv[])
              printf("\n\tplyaski settings ~ Displays the current settings of the video server\n\n");
              printf("\t\tplyaski settings set <SETTING> <VALUE> ~ Sets a value of a setting\n\n\t\tplayaski settings ls ~ Lists all of the settings and their values\n");
         }
+        if(strcmp(argv[2],"set")==0)
+        {
+            set_settings(argc, argv);
+        }
         if(strcmp(argv[2], "ls"))
         {
-            
+
         }
     }
 };
