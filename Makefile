@@ -5,5 +5,5 @@ SERVER=$(wildcard server/*.cpp)
 SERVER_HEADERS=$(wildcard server/includes/*.hhp)
 
 linux: $(SERVER_HEADERS)
-	$(CC) $(SERVER) -o $(SERVER_OUTPUT)/plyaski
-	sudo cp ./plyaski /usr/local/bin/
+	sudo $(CC) $(SERVER) -o $(SERVER_OUTPUT)plyaski
+	sudo cp ./out/linux/plyaski /usr/local/bin/
