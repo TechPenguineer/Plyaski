@@ -2,6 +2,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "includes/server_utils.h"
+
+/*
+To Find a specific setting you can type "<setting display name> SETTING"
+
+Example:
+   ctrl+f PORT SETTING
+*/
+
+
 /*
 Settings: 
     Port = 1080
@@ -16,12 +25,17 @@ Settings:
 int port;
 void set_settings(int argc, char *argv[])
 {
+    // PORT SETTING
+
     if(strcmp(argv[2], "port"))
     {
-       int port_value = atoi(argv[3]);
+       if(!argv[3]){
+            printf("Error: Unable to set a setting value to a NULL value. Expected value");
+        }
+       int port_value = atoi(argv[4]);
 
        port = port_value;
-       printf("%i",port);
+       printf("Succesfully Set Server Port To: %i\n",port);
     }
 }
 
